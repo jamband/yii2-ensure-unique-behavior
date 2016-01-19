@@ -1,0 +1,27 @@
+{
+  "name": "jamband/yii2-ensure-unique-behavior",
+  "description": "This extension insert unique identifier automatically for the Yii 2 framework",
+  "keywords": ["yii2", "extension", "behavior", "unique"],
+  "homepage": "https://github.com/jamband/yii2-ensure-unique-behavior",
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tomoki Morita",
+      "email": "tmsongbooks215@gmail.com",
+      "homepage": "http://jamband.github.io/"
+    }
+  ],
+  "require": {
+    "php": ">= 5.5.0",
+    "yiisoft/yii2": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "jamband\\behaviors\\": "src"
+    }
+  }
+}
