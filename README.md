@@ -72,7 +72,7 @@ $model->title = 'title';
 $model->content = 'content';
 $model->save();
 
-// This values is eusure uniqueness.
+// This value is eusure uniqueness
 var_dump($model->id); // string(11) "-ZRLSS-4vl_"
 ```
 
