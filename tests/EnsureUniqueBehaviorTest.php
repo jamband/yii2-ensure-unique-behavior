@@ -34,10 +34,6 @@ class EnsureUniqueBehaviorTest extends \PHPUnit_Framework_TestCase
         Yii::$app->db->createCommand()
             ->createTable('foo', ['id' => 'string primary key NOT NULL'])
             ->execute();
-
-        Yii::$app->db->createCommand()
-            ->truncateTable('foo')
-            ->execute();
     }
 
     public function tearDown()
