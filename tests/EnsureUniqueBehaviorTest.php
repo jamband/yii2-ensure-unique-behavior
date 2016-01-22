@@ -70,18 +70,15 @@ class EnsureUniqueBehaviorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(64, (int)Foo::find()->select('id')->distinct()->count());
     }
 
-    /**
-     * to skipped because takes time.
     public function testLengthTwo()
     {
         Foo::$behaviors['ensure-unique'] = [
             'class' => LooseEnsureUniqueBehavior::class,
             'length' => 2, // [A-Za-z0-9_-]{2}
         ];
-        foreach (range(1, 4096) as $i) {
+        foreach (range(1, pow(64, 2)) as $i) {
             (new Foo())->save(false);
         }
-        $this->assertSame(4096, (int)Foo::find()->select('id')->distinct()->count());
+        $this->assertSame(pow(64, 2), (int)Foo::find()->select('id')->distinct()->count());
     }
-     */
 }

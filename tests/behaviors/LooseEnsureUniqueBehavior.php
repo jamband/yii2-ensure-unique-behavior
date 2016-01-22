@@ -11,7 +11,6 @@
 
 namespace tests\behaviors;
 
-use yii\base\Security;
 use jamband\behaviors\EnsureUniqueBehavior;
 
 class LooseEnsureUniqueBehavior extends EnsureUniqueBehavior
@@ -21,10 +20,9 @@ class LooseEnsureUniqueBehavior extends EnsureUniqueBehavior
      */
     protected function getValue($event)
     {
-        $security = new Security();
-        $value = $security->generateRandomString($this->length);
+        $value = $this->generateRandomString();
         while (!$this->isUnique($value)) {
-            $value = $security->generateRandomString($this->length);
+            $value = $this->generateRandomString();
         }
         return $value;
     }

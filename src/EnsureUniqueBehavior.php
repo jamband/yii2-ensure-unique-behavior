@@ -12,7 +12,6 @@
 namespace jamband\behaviors;
 
 use yii\base\InvalidConfigException;
-use yii\base\Security;
 use yii\behaviors\AttributeBehavior;
 use yii\db\BaseActiveRecord;
 use yii\validators\UniqueValidator;
@@ -57,10 +56,9 @@ class EnsureUniqueBehavior extends AttributeBehavior
         if (self::MIN_LENGTH > $this->length) {
             throw new InvalidConfigException(self::class.'::length must be at least '.self::MIN_LENGTH.' or more.');
         }
-        $security = new Security();
-        $value = $security->generateRandomString($this->length);
+        $value = $this->generateRandomString();
         while (!$this->isUnique($value)) {
-            $value = $security->generateRandomString($this->length);
+            $value = $this->generateRandomString();
         }
         return $value;
     }
@@ -79,5 +77,18 @@ class EnsureUniqueBehavior extends AttributeBehavior
         (new UniqueValidator())->validateAttribute($model, $this->attribute);
 
         return !$model->hasErrors();
+    }
+
+    /**
+     * Generates a random string of specified length.
+     * @return string
+     */
+    protected function generateRandomString()
+    {
+        $bytes = function_exists('random_bytes')
+            ? random_bytes($this->length)
+            : openssl_random_pseudo_bytes($this->length);
+
+        return strtr(substr(base64_encode($bytes), 0, $this->length), '+/', '_-');
     }
 }
