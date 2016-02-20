@@ -26,7 +26,7 @@ Creates a post table:
 
 ```sql
 CREATE TABLE `post` (
-    `id` CHAR(11) NOT NULL,
+    `id` CHAR(11) COLLATE utf8_bin NOT NULL,
     `title` VARCHAR(255) NOT NULL,
     `content` TEXT NOT NULL,
     `created_at` INT(11) NOT NULL,
