@@ -72,9 +72,9 @@ class EnsureUniqueBehaviorTest extends \PHPUnit_Framework_TestCase
             'class' => LooseEnsureUniqueBehavior::class,
             'length' => 2, // [A-Za-z0-9_-]{2}
         ];
-        foreach (range(1, pow(64, 2)) as $i) {
+        foreach (range(1, 64 ** 2) as $i) {
             (new Foo())->save(false);
         }
-        $this->assertSame(pow(64, 2), (int)Foo::find()->select('id')->distinct()->count());
+        $this->assertSame(64 ** 2, (int)Foo::find()->select('id')->distinct()->count());
     }
 }
