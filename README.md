@@ -38,8 +38,6 @@ CREATE TABLE `post` (
 Settings EnsureUniqueBehavior in Model:
 
 ```php
-<?php
-
 namespace app\models;
 
 use jamband\behaviors\EnsureUniqueBehavior;
@@ -65,8 +63,6 @@ class Post extends ActiveRecord
 And saves a new model:
 
 ```php
-<?php
-
 $model = new \app\models\Post();
 $model->title = 'title';
 $model->content = 'content';
