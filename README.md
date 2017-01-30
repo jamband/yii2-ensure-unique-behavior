@@ -6,7 +6,7 @@ Insert unique identifier automatically for the Yii 2 framework.
 
 ## Requirements
 
-* PHP 5.5+
+* PHP 5.6+
 * Yii 2.x
 
 ## Installation
