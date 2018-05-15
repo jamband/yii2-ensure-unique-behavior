@@ -12,12 +12,7 @@ Insert unique identifier automatically for the Yii 2 framework.
 ## Installation
 
 ```
-php composer.phar require --prefer-dist jamband/yii2-ensure-unique-behavior "*"
-```
-
-or add in composer.json (require section)
-```
-"jamband/yii2-ensure-unique-behavior": "*"
+composer require --prefer-dist jamband/yii2-ensure-unique-behavior "*"
 ```
 
 ## Examples
