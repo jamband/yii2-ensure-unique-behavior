@@ -9,21 +9,27 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace tests\behaviors;
 
 use jamband\behaviors\EnsureUniqueBehavior;
+use yii\base\Event;
 
 class LooseEnsureUniqueBehavior extends EnsureUniqueBehavior
 {
     /**
-     * @inheritdoc
+     * @param Event $event
+     * @return mixed
      */
     protected function getValue($event)
     {
         $value = $this->generateRandomString();
+
         while (!$this->isUnique($value)) {
             $value = $this->generateRandomString();
         }
+
         return $value;
     }
 }

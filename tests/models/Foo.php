@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  * This file is part of yii2-ensure-unique-behavior
  *
@@ -9,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace tests\models;
 
 use yii\db\ActiveRecord;
@@ -17,12 +20,12 @@ class Foo extends ActiveRecord
 {
     public static $behaviors;
 
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'foo';
     }
 
-    public function behaviors()
+    public function behaviors(): array
     {
         return static::$behaviors;
     }
