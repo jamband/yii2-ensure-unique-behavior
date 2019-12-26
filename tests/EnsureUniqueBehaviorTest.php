@@ -14,11 +14,12 @@ declare(strict_types=1);
 namespace tests;
 
 use jamband\behaviors\EnsureUniqueBehavior;
+use PHPUnit\Framework\TestCase;
 use tests\behaviors\LooseEnsureUniqueBehavior;
 use tests\models\Foo;
 use Yii;
+use yii\base\InvalidConfigException;
 use yii\db\Connection;
-use PHPUnit\Framework\TestCase;
 
 class EnsureUniqueBehaviorTest extends TestCase
 {
@@ -32,8 +33,6 @@ class EnsureUniqueBehaviorTest extends TestCase
 
     public function setUp(): void
     {
-        parent::setUp();
-
         Yii::$app->db->createCommand()
             ->createTable('foo', ['id' => 'string primary key NOT NULL'])
             ->execute();
@@ -42,19 +41,17 @@ class EnsureUniqueBehaviorTest extends TestCase
     public function tearDown(): void
     {
         Yii::$app->db->close();
-
-        parent::tearDown();
     }
 
-    /**
-     * @expectedException \yii\base\InvalidConfigException
-     */
     public function testLengthException(): void
     {
+        $this->expectException(InvalidConfigException::class);
+
         Foo::$behaviors['ensure-unique'] = [
             'class' => EnsureUniqueBehavior::class,
             'length' => 1,
         ];
+
         (new Foo())->save(false);
     }
 
@@ -64,9 +61,11 @@ class EnsureUniqueBehaviorTest extends TestCase
             'class' => LooseEnsureUniqueBehavior::class,
             'length' => 1, // [A-Za-z0-9_-]{1}
         ];
+
         foreach (range(1, 64) as $i) {
             (new Foo())->save(false);
         }
+
         $this->assertSame(64, (int)Foo::find()->select('id')->distinct()->count());
     }
 
@@ -76,9 +75,11 @@ class EnsureUniqueBehaviorTest extends TestCase
             'class' => LooseEnsureUniqueBehavior::class,
             'length' => 2, // [A-Za-z0-9_-]{2}
         ];
+
         foreach (range(1, 64 ** 2) as $i) {
             (new Foo())->save(false);
         }
+
         $this->assertSame(64 ** 2, (int)Foo::find()->select('id')->distinct()->count());
     }
 }
