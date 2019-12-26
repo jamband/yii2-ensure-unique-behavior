@@ -6,13 +6,13 @@ Insert unique identifier automatically for the Yii 2 framework.
 
 ## Requirements
 
-* PHP 7.1 or later
+* PHP 7.2 or later
 * Yii 2.x
 
 ## Installation
 
 ```
-composer require --prefer-dist jamband/yii2-ensure-unique-behavior "*"
+composer require jamband/yii2-ensure-unique-behavior
 ```
 
 ## Examples
