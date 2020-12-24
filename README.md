@@ -1,6 +1,6 @@
 # yii2-ensure-unique-behavior
 
-[![Latest Stable Version](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/v/stable)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![Total Downloads](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/downloads)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior)
+[![Build Status](https://github.com/jamband/yii2-ensure-unique-behavior/workflows/tests/badge.svg)](https://github.com/jamband/yii2-ensure-unique-behavior/actions?workflow=tests) [![Latest Stable Version](https://img.shields.io/packagist/v/jamband/yii2-ensure-unique-behavior)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![Total Downloads](https://img.shields.io/packagist/dt/jamband/yii2-ensure-unique-behavior)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior)
 
 Insert unique identifier automatically for the Yii 2 framework.
 
