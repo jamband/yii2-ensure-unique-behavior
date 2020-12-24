@@ -1,6 +1,6 @@
 # yii2-ensure-unique-behavior
 
-[![Latest Stable Version](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/v/stable)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![Total Downloads](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/downloads)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![Latest Unstable Version](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/v/unstable)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![License](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/license)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![Build Status](https://travis-ci.org/jamband/yii2-ensure-unique-behavior.svg?branch=master)](https://travis-ci.org/jamband/yii2-ensure-unique-behavior)
+[![Latest Stable Version](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/v/stable)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![Total Downloads](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/downloads)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![Latest Unstable Version](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/v/unstable)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior) [![License](https://poser.pugx.org/jamband/yii2-ensure-unique-behavior/license)](https://packagist.org/packages/jamband/yii2-ensure-unique-behavior)
 
 Insert unique identifier automatically for the Yii 2 framework.
 
